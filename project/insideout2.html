@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Out-2</title>
+
+    <meta charset="UTF-8">
+        <title>Flix Vibe</title>
+        <!--fav icon-->
+        <link href="../assets/img/original/fav/favicon.png" rel="icon" type="image/png" sizes="16x16" />
+        <!--bootstrap css1 js1---->
+        <link href="../assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+        <!--fontawesome css1--->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet" integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <!--jquery css1 js1-->
+        <link href="../assets/libs/jquery-ui-1.13.2/jquery-ui.min.js" rel="stylesheet" type="text/css" />
+        <!--lightbox2 css1 js1---->
+        <link href="../assets/libs/lightbox2-2.11.4/dist/css/lightbox.min.css" rel="stylesheet" type="text/css" />
+        <!--Custom css-->
+        <link href="../css/style.css" rel="stylesheet" type="text/css"/>
+
+        <style>
+
+            /* *Start Header Section */
+/*header{
+  height: 100vh;
+  background: linear-gradient(
+      30deg,
+      rgba(0,0,0,0),
+      rgba(0,0,0,0.5)
+  ),url(./../assets/img/twinchel/banner5.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+/*header.active{
+  height: 100vh;
+  background: linear-gradient(
+      30deg,
+      rgba(0,0,0,0),
+      rgba(0,0,0,0.5)
+  ),url(./../assets/img/twinchel/banner1.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}*/
+
+/*Start Nav Bar*/
+.navbar{
+  background: linear-gradient(rgba(0,0,0,0.3),white);
+  padding: 20px 30px;
+
+  transition: all .7s; 
+}
+.navbar.active{
+  background: linear-gradient(rgba(0,0,0,0.3),var(--primary-color));
+}
+.navmenus{
+  background: linear-gradient(rgba(0,0,0,0.3),white);
+  padding: 5px 30px;
+}
+.h3{
+  color: var(--primary-color);
+}
+.h3.active{
+  color: white;
+}
+.menuitems{
+  color: var(--primary-color);
+  font-size: 13px;
+  letter-spacing: 1px;
+
+  transition: color .5s;
+}
+.menuitems:hover{
+  color: skyblue;
+}
+.menuitems.active{
+  color: white;
+}
+.menuitems.active:hover{
+  color: skyblue;
+}
+
+.lines1,.lines2,.lines3{
+  width: 25px;
+  height: 3px;
+  margin: 6px;
+}
+.crossxs .lines1{
+  transform: rotate(-45deg) translate(-6px,6px);
+}
+.crossxs .lines2{
+  opacity: 0;
+}
+.crossxs .lines3{
+  transform: rotate(45deg) translate(-6px,-6px);
+}
+/*End Nav Bar*/
+
+/*Start Search Bar*/
+.wrapper {
+  max-width: 450px;
+  margin: 10px;
+  float: right;
+}
+
+.wrapper .search-input{
+  background: #fff;
+  width: 100%;
+  border-radius : 5px;
+  position: relative;
+  box-shadow: Opx 1px 5px 3px rgba(0,0,0,0. 12);
+}
+
+.search-input input {
+  height: 35px;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  box-shadoW: 0px 1px 5px rgba(0,0,0,0.1);
+  z-index: 1;
+  position: relative;
+}
+
+.search-input.active input{
+  border-radius : 5px 5px 0 0;
+}
+
+.search-input .autocom-box{
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+  background-color: #ffffff;
+  border-radius : 0 0 5px 5px;
+  position: absolute;
+  width: 100%;
+}
+
+.search-input.active .autocom-box{
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto ;
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li{
+  display: block;
+}
+
+.autocom-box li:hover{
+  background: #efefef;
+}
+
+.search-input .icon{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+  height: 35px;
+  width: 55px;
+  text-align: center;
+  line-height: 40px;
+  font-size: 20px;
+  background-color: #ffffff;
+  color: #0d6efd;
+  cursor: pointer;
+  border-left: 1px solid rgb(27, 94, 123);
+  z-index: 2;
+}
+/*End Search Bar*/
+
+        </style>
+</head>
+<body style="background-color: gray;">
+    <!-- Start Back To Top  -->
+    <div class="fixed-bottom">
+        <a href="#" class="btn-backtotops"><i class="fas fa-arrow-up"></i></a>
+    </div>
+  <!-- End Back To Top  -->
+
+  <!---Start Header Section--->
+  <header>
+    <!---Start Nav Bar-->
+     <nav class="navbar navbar-expand-md fixed-top">
+       <a href`="index.html" class="navbar-brand text-light mx-3">
+          <img src="../assets/img/Strawberry/logo2.png" width="70px" alt="favicon"/>
+          <span class="text-uppercase h3 fw-bold mx-4">Flix<span class="h3"> Vibe</span></span>
+       </a>
+
+       <button type="button" class="navbar-toggler navbuttons " data-bs-toggle="collapse" data-bs-target="#nav">
+          <div class="bg-light lines1"></div>
+          <div class="bg-light lines2"></div>
+          <div class="bg-light lines3"></div>
+       </button>
+
+       <div id="nav" class="navbar-collapse collapse justify-content-end text-uppercase fw-bold">
+          <ul class="navbar-nav">
+             <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="home">Home</a></li>
+             <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="aboutus" >About Us</a></li>
+             <li class="nav-item dropdown"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists dropdown-toggle" data-filter="movies" data-bs-toggle="dropdown">Trendings</a>
+                 <ul class="dropdown-menu">
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="action">Action</a></li>
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="horror">Horror</a></li>
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="romantic">Romantic</a></li>
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="drama">Drama</a></li>
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="funny">Funny</a></li>
+                     <li><a href="javascript:void(0);" class="dropdown-item" data-filter="animation">Animation</a></li>
+                 </ul>
+             </li>
+             <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="toprated">Top Rated</a></li>
+          </ul>
+       </div>
+       <div class="wrapper">
+         <div class="search-input">
+             <a href="" target="_blank" hidden></a>
+             <input type=" text" placeholder="Search...">
+             <div class="autocom-box"></div>
+             <div class="icon"><i class=" fas fa-search"></i></div>
+         </div>
+       </div>  
+       <div class="toggle">
+         <i class="fas fa-sun toggle-icon"></i>
+         <i class="fas fa-moon toggle-icon"></i>
+         <div class="toggle-ball"></div>
+       </div>
+     </nav>
+    <!--End Nav Bar-->
+
+   
+    <!--Start Banner--
+     <div class="text-light text-center text-md-end text-sm-center banners">
+        <h1 class="display-4 bannerheaders auto">Welcome to <span class="display-3 text-uppercase auto">Flix Vibe</span> Movies Theater</h1>
+        <p class="lead bannerparagraphs auto">Your pleasure is our pleasure, ENJOY your golden time.</p>
+     </div>
+   <--End Banner--->
+   </header>
+<!---End Header Section----->
+
+<aside style="margin-left: 20px;">
+
+    <h1 style="text-align: center;">Inside Out-2</h1>
+    <div style="padding-top: 20px; padding-bottom: 20px;">
+     <img src="../assets/img/shinnobu/inside1.jpg" style="float: left; width: 300px; height: 150px; margin-left: 10px;">
+     <img src="../assets/img/shinnobu/inside2.jpg" style="float: left; width: 300px; height: 150px;  margin-left: 10px;">
+     <img src="../assets/img/shinnobu/inside3.jpg" style="float: left; width: 300px; height: 150px;  margin-left: 10px;">
+     <img src="../assets/img/shinnobu/inside4.jpg" style="width: 300px; height: 150px;  margin-left: 10px;">
+    </div>
+
+    <p style="font-size: 30px;"><b>Synopsis:</b><br>
+        A sequel that features Riley entering puberty and experiencing brand new, more complex emotions as a result. As Riley tries to adapt to her teenage years, her old emotions try to adapt to the possibility of being replaced.
+        When teenage Riley heads off to hockey camp, the puberty alarm in headquarters goes off and new emotions come in. When it turns out that these new emotions intend on completely changing Riley, Joy and the emotions are determined to stop them.</p>
+
+
+</aside>
+<h3 style="font-size: 35px;"><b>Trailer</b></h3>
+<video controls style="display: flex; justify-content: center; float: left; margin: 0 50px 0 0;"><source src="../assets/img/shinnobu/insideoutmp4.mp4"></video>
+<ul style="font-size: 25px;">
+    <li>Director: Kelsey Mann</li>
+    <li>Distributed by: Walt Disney Studios Motion Pictures</li>
+    <li>Genre: Family, Comedy</li>
+    <li>Runtime: 1hr 36min</li>
+    <li>Release Date: June 14, 2024</li>
+    <li>Rating: PR</li>
+    <li>Language: English</li>
+    <li>Box office:$1.675 billion</li>
+</ul>
+</body>
+</html>

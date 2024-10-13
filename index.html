@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <title>Flix Vibe</title>
         <!--fav icon-->
-        <link href="./assets/img/fav/favicon3.png" rel="icon" type="image/png" sizes="16x16" />
+        <link href="./assets/img/shinnobu/logo2-removebg-preview.png" rel="icon" type="image/png" sizes="16x16" />
         <!--bootstrap css1 js1---->
         <link href="./assets/libs/bootstrap-5.3.2-dist/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
         <!--fontawesome css1--->
@@ -28,10 +28,10 @@
         <!---Start Header Section--->
           <header>
              <!---Start Nav Bar-->
-              <nav class="navbar navbar-expand-md fixed-top">
+              <nav class="navbar navbar-expand-md fixed-top" style="height: 100px";>
                 <a href`="index.html" class="navbar-brand text-light mx-3">
-                   <img src="./assets/img/original/fav/favicon.png" width="70px" alt="favicon"/>
-                   <span class="text-uppercase h3 fw-bold mx-4">Flix<span class="h3"> Vibe</span></span>
+                   <img src="./assets/img/shinnobu/logo2-removebg-preview.png" width="100px" alt="favicon" style="border-radius: 50%; margin-bottom: 10px;"/>
+                   <span class="text-uppercase h3 fw-bold mx-4" style="font-family: 'Times New Roman', Times, serif; font-size: 50px;">Flix<span class="h3" style="font-family: 'Times New Roman', Times, serif; font-size: 50px;"> Vibe</span></span>
                 </a>
 
                 <button type="button" class="navbar-toggler navbuttons " data-bs-toggle="collapse" data-bs-target="#nav">
@@ -44,17 +44,17 @@
                    <ul class="navbar-nav">
                       <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="home">Home</a></li>
                       <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="aboutus" >About Us</a></li>
-                      <li class="nav-item dropdown"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists dropdown-toggle" data-filter="movies" data-bs-toggle="dropdown">Trendings</a>
+                      <li class="nav-item dropdown"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists dropdown-toggle" data-filter="movies" data-bs-toggle="dropdown">Gendres</a>
                           <ul class="dropdown-menu">
-                              <li><a href="javascript:void(0);" class="dropdown-item" data-filter="action">Action</a></li>
+                              <li><a href="./project/action.html" class="dropdown-item" data-filter="action">Action</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="horror">Horror</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="romantic">Romantic</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="drama">Drama</a></li>
-                              <li><a href="javascript:void(0);" class="dropdown-item" data-filter="funny">Funny</a></li>
+                              <li><a href="javascript:void(0);" class="dropdown-item" data-filter="funny">Comedy</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="animation">Animation</a></li>
                           </ul>
                       </li>
-                      <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="toprated">Top Rated</a></li>
+                      <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="toprated">Trendings</a></li>
                    </ul>
                 </div>
                 <div class="wrapper">
@@ -75,7 +75,7 @@
             
              <!--Start Banner-->
               <div class="text-light text-center text-md-end text-sm-center banners">
-                 <h1 class="display-4 bannerheaders auto">Welcome to <span class="display-3 text-uppercase auto">Flix Vibe</span> Movies Theater</h1>
+                 <h1 class="display-4 bannerheaders auto">Welcome to <span class="display-3 text-uppercase auto" style="font-family: 'Times New Roman', Times, serif;">Flix Vibe</span> Movies Theater</h1>
                  <p class="lead bannerparagraphs auto">Your pleasure is our pleasure, ENJOY your golden time.</p>
               </div>
             <!---End Banner--->
@@ -190,18 +190,9 @@
             <h2 class="movie-list-title fw-bold filters horror">Horror</h2>
             <div class="movie-list-wrapper">
               <div class="movie-list">
+
                  <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thwinchel/horror1.jpg" alt="horror1"/>
-                   <span class="movie-list-item-title">The Judge from Hell</span>
-                   <p class="movie-list-item-desc">Episode - 16
-                    <br>Directed by -  Park Jin-pyo</br>
-                    <br>Starring - Park Shin-hye, 
-                    Kim Jae-young</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/thejudgefromhell.mp4" target="_blank">Watch</a></button>  
-                   
-                 </div>
-                 <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thwinchel/horror2.jpg" alt="horror2"/>
+                   <img class="movie-list-item-img" src="./assets/img/tom/thewitch-p.jpg" alt="horror2"/>
                    <span class="movie-list-item-title">The Witch</span>
                    <p class="movie-list-item-desc">Running time - 1h 32m
                        <br>Directed by - Robert Eggers</br>
@@ -210,7 +201,7 @@
                  </div>
    
                <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thwinchel/horror3.jpg" alt="horror3"/>
+                   <img class="movie-list-item-img" src="./assets/img/tom/hereditary.jpg" alt="horror3"/>
                    <span class="movie-list-item-title">Hereditary</span>
                    <p class="movie-list-item-desc">Running time -  2h 7m
                        <br>Directed by - Christopher McQuarrie</br>
@@ -274,7 +265,7 @@
 
                
                <div class="movie-list-item">
-                <img class="movie-list-item-img" src="./assets/img/thwinchel/horror10.jpg" alt="horror10"/>
+                <img class="movie-list-item-img" src="./assets/img/tom/horror10.jpg" alt="horror10"/>
                 <span class="movie-list-item-title">The Conjuring 2</span>
                 <p class="movie-list-item-desc">Running time - 2h 14m
                     <br>Directed by - James Wan.</br>
@@ -676,7 +667,7 @@
                    <p class="movie-list-item-desc">Running time - 1h 49m
                    <br>Directed by - Peter Sohn</br>
                    <br>Distributed by - Walt Disney Studios Motion Pictures</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/elemental.mp4" target="_blank">Watch</a></button>       
+                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/elemental.html" target="_blank">Watch</a></button>       
                </div>
    
                <div class="movie-list-item">
@@ -842,11 +833,11 @@
                             <li><a href="javascript:void(0); " class="footerlinks">VIA Payments By Embassy</a></li>     
                         </ul>
                         <ul class="list-inline">
-                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/thwinchel/payment/visacard.png" alt="visacard" /></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/thwinchel/payment/mastercard.png" alt="mastercard" /></a></li>
-                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/thwinchel/payment/americancard.png" alt="americancard" /></a></li>   
-                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/thwinchel/payment/card.png" alt="card" /></a></li> 
-                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/thwinchel/payment/descoverycard.png" alt="descoverycard" /></a></li>             
+                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/shinnobu/icons8-visa-48.png" alt="visacard" /></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/shinnobu/mastercard.png" alt="mastercard" style="width: 48px; height: 48px;" /></a></li>
+                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/shinnobu/americancard.png" alt="americancard" style="width: 48px; height: 48px;" /></a></li>   
+                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/shinnobu/icons8-bank-cards-48.png" alt="card" /></a></li> 
+                            <li class="list-inline-item"><a href="javascript:void(0); " class="footerlinks"><img src="./assets/img/shinnobu/discoverycard.png" alt="descoverycard" /></a></li>             
                         </ul>
                     </div>
                 </div>
