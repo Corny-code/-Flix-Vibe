@@ -124,5 +124,101 @@ getyear.textContent = getfullyear;
 
 // End Footer Section 
 
+// search bar section
+
+let suggestions = [
+  // ABC Normal Letters
+  "inside out 2",
+  "wish",
+  "doctor slump",
+  "dear hyeri",
+  "dashing youth ",
+  "annabelle",
+  "annabelle comes home",
+  "my oni girl",
+  "the conjuring1",
+  "the conjuring 2",
+  "GTA 2",
+  "GTA 3",
+  "GTA 4",
+  "GTA 5",
+  "GTA 6",
+  "GTA 7",
+  "GTA 8",
+  "GTA 9",
+  "GTA 10",
+  "GTA 11"
+]
+
+// getting all required elements
+const searchWrapper = document.querySelector( ".search-input" );
+const inputBox = searchWrapper.querySelector( "input" );
+const suggBox = searchWrapper.querySelector(".autocom-box" );
+const icon = searchWrapper.querySelector(".icon");
+let linkTag = searchWrapper.querySelector( "a" );
+let webLink;
+
+// if user press any key and release
+inputBox.onkeyup = (e) => {
+  let userData = e.target.value; //user enetered data
+  let emptyArray = [];
+  
+  if(userData) {
+      icon.onclick = () => {
+          webLink = "https://www.google.com/search?q="+ userData+"&oq="+ userData
+          linkTag.setAttribute( "href", webLink) ;
+          console.log(webLink);
+          linkTag.click( );
+      }
+      emptyArray = suggestions.filter((data) => {
+
+          // Filtering array value and user characters to lowercase and return on ly those words which are start with user enetered chars
+          return data.toLocaleLowerCase().includes(userData.toLocaleLowerCase());
+      });
+
+      emptyArray = emptyArray.map((data) => {
+          // passing return data inside li tag
+          return data = '<li>'+ data +'</li>';
+      });
+
+      searchWrapper.classList.add("active"); //show autocomplete box
+
+      showSuggestions(emptyArray);
+
+      let allList = suggBox.querySelectorAll("li");
+
+      for (let i = 0; i < allList.length; i++) {
+          //adding onclick attribute in all li tag
+          allList[i].setAttribute( "onclick", "select(this) ");
+      }
+  } else {
+      searchWrapper.classList.remove( "active"); //hide autocomplete box
+  }
+}
+
+function select(element, event ){
+  let selectData = element.textContent;
+  inputBox.value = selectData;
+  icon.onclick = ()=>{
+      webLink = "https://www.google.com/search?q="+ selectData+"&oq="+ selectData
+      linkTag.setAttribute ( "href", webLink);
+      linkTag.click( );
+  }
+  searchWrapper.classList.remove( "active");
+}
+
+function showSuggestions ( list ) {
+  let listData;
+  if(!list.length ){
+      userValue = inputBox.value;
+      listData = '<li>'+ userValue +'</li>';
+  }else{
+      listData = list.join('');
+  }
+  suggBox.innerHTML= listData;
+}
+
+// End search bar section
+
 
 });
