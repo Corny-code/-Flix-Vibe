@@ -43,79 +43,170 @@ header.active{
   background-position: center;
   background-attachment: fixed;
 }
-
-.card 
-{
-  transition: .4s all ease-in;
-  border: none;
-  margin: 25px auto;
-  
-  
-  
-}
-
-.card-img-top{
-  box-shadow: 0 0 25px rgba(0,0,0,.05);
-}
-
-.carousel-control-next-icon 
-{
-  padding: 0 4px 0 0; 
-}
-.product_price 
-{
-  float:right;
-  font-family: lato;
-	color:#6b7270;
-	font-size: 20px;
-	font-weight:400;
-}
-
-
-.product-detail {
-  position: absolute;
-  height: 75px;
-  left: 15px;
-  right: 15px;
-  bottom: 15px;
-  overflow: hidden;
-  padding: 15px;
-  background-color: rgba(223, 217, 217, 0.75);
-  transition: all 0.35s;
-  text-align: center;
-box-sizing: border-box;
-}
-.card .product-detail h5
-{
-  font-family: 'Oswald';
-  text-transform: uppercase;
-  font-size: 20px;
-  font-weight: 400;
-  line-height: 24px;
-  margin: 3px 0;
- 
-}
-
-.card .product-detail .subheading {
-  font-weight: 400;
+*{
   margin: 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-align: center;
-  color: rgba(0,0,0,0.6);
-}
-
-.card .product-detail blockquote 
-{
   padding: 0;
-  margin: 0;
-  font-style: italic;
-  font-size: 1em;
-  
+  box-sizing: border-box;
 }
-.card:hover .product-detail {
-  height: calc(92%);
-  padding-top: 100px;
+
+aside{
+    padding: 30px;
+    background-color: rgba(107, 151, 239, 0.71);
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    transform-style: preserve-3d;
+  }
+  aside.active{
+    padding: 30px;
+    background-color: var(--primary-color);
+    height: auto;
+  }
+
+.carousel1{
+  position: relative;
+  display: flex;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+}
+
+
+.carousel1 .iiteem{
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 100px);
+  width: 300px;
+  height: 400px;
+  background: lightgray;
+  transition: 0.5s;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  user-select: none;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0002);
+}
+
+.carousel1 .iiteem:nth-child(1){
+  transform: translate3d(-250px,0,0) scale(0.8) rotateY(25deg);
+  z-index: 1;
+}
+
+.carousel1 .iiteem:nth-child(2){
+  transform: translate3d(-250px,0,0) scale(0.8) rotateY(25deg);
+  z-index: 2;
+}
+
+.carousel1 .iiteem:nth-child(3){
+  transform: translate3d(-150px,0,0) scale(0.9) rotateY(15deg);
+  z-index: 3;
+}
+
+.carousel1 .iiteem:nth-child(4){
+  transform: translate3d(0px,0,0) scale(1) rotateY(0deg);
+  z-index: 4;
+}
+
+.carousel1 .iiteem:nth-child(5){
+  transform: translate3d(150px,0,0) scale(0.9) rotateY(-15deg);
+  z-index: 3;
+}
+
+.carousel1 .iiteem:nth-child(6){
+  transform: translate3d(250px,0,0) scale(0.8) rotateY(-25deg);
+  z-index: 2;
+}
+
+.carousel1 .iiteem:nth-child(7){
+  transform: translate3d(250px,0,0) scale(0.8) rotateY(-25deg);
+  z-index: -1;
+}
+
+.carousel1 .iiteem img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel1 .iiteem .texting{
+  position: relative;
+  
+  object-fit: fill;
+}
+
+.carouselbutton{
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.carouselbutton span{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #1a1919;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.carouselbutton span:hover{
+  opacity: 1;
+}
+
+.carouselbutton span::before{
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #1a1919;
+  border-left: 3px solid #1a1919;
+  rotate: -45deg;
+}
+
+.carouselbutton span:last-child::before{
+  content: '';
+  position: absolute;
+  left: initial;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #1a1919;
+  border-left: 3px solid #1a1919;
+  rotate: 135deg;
+}
+
+.texting{
+  background-color: #ffffffb0;
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.iiteem:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.iiteem:hover .texting{
+  opacity: 1;
 }
     </style>
 
@@ -147,8 +238,8 @@ box-sizing: border-box;
                       <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="aboutus" >About Us</a></li>
                       <li class="nav-item dropdown"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists dropdown-toggle" data-filter="movies" data-bs-toggle="dropdown">Gendres</a>
                           <ul class="dropdown-menu">
-                              <li><a href="../project/action.html" class="dropdown-item" data-filter="action">Action</a></li>
-                              <li><a href="../project/horror.html" class="dropdown-item" data-filter="horror">Horror</a></li>
+                              <li><a href="./action.html" class="dropdown-item" data-filter="action">Action</a></li>
+                              <li><a href="./horror.html" class="dropdown-item" data-filter="horror">Horror</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="romantic">Romantic</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="drama">Drama</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="funny">Funny</a></li>
@@ -184,13 +275,78 @@ box-sizing: border-box;
         <!---End Header Section----->  
 
         <!--Start Movie Section -->
-         <div class="movie-list-container col-md-12">
-            
-         </div>
+
+        <div class="subscribes">
+          <h1 class="title text-center text-md-end fw-bold filters trendings" style="font-size: 70px;">Trendings</h1>
+        </div>
+        <aside class="subscribes">
+          <div class="carousel1">
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni8.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni1.jpg">
+              <div class="texting">
+                <p class="para">Dead</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni2.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni8.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni4.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="../assets/img/shinnobu/anni5.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="ThewildRobot.html">Watch</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="carouselbutton">
+            <span class="prev"></span>
+            <span class="next"></span>
+          </div>
+          <script>
+            let prev = document.querySelector('.prev');
+            let next = document.querySelector('.next');
+
+            next.addEventListener('click', function(){
+              let items = document.querySelectorAll('.iiteem');
+              document.querySelector('.carousel1').appendChild(items[0]);
+            })
+            prev.addEventListener('click', function(){
+              let items = document.querySelectorAll('.iiteem');
+              document.querySelector('.carousel1').appendChild(items[items.length - 1]);
+            })
+          </script>
+        </aside>
+         
         <!--End Movie Section -->
         
         <!-- Start Subscribe Section -->
-        <section class="subscribes">
+        <section class="subscribes"><hr>
 
             <div class="container-fluid">
                 <div class="row">

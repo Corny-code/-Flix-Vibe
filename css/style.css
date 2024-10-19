@@ -496,7 +496,7 @@ header.active{
  
 /* Start Subscribe Section */
 .subscribes{
-  background-color: gray;
+  background-color: rgba(107, 151, 239, 0.71);
   background-repeat: no-repeat;
   background-position: 80%;
   padding: 10px 20px;

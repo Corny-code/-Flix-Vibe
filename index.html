@@ -2,12 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Flix Vibe</title>
-        <meta name="google-site-verification" content="GvwLsAqRx1xLy8o-NmF1b16LInJ93d4P1QGs72vvLkY" />
-        <meta name="description" content="Flix Vibe Movies Theater, the movies website is the world's most popular authoritative source for movies and series. You can search the trending movies and series in our 'Flix Vibe' website." >
-        <meta name="keywords" content="Movies, Series, Trendings, Trending in this year, Popular">
-        <meta name="author" content="Let's Fight Together Team">
         <!--fav icon-->
         <link href="./assets/img/shinnobu/logo2-removebg-preview.png" rel="icon" type="image/png" sizes="16x16" />
         <!--bootstrap css1 js1---->
@@ -23,6 +18,173 @@
         
     </head>
 
+    <style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+aside{
+    padding: 30px;
+    background-color: rgba(107, 151, 239, 0.71);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh;
+    transform-style: preserve-3d;
+  }
+  aside.active{
+    padding: 30px;
+    background-color: var(--primary-color);
+    height: auto;
+  }
+
+.carousel1{
+  position: relative;
+  display: flex;
+  transform-style: preserve-3d;
+  perspective: 500px;
+  margin-bottom: 100px;
+  margin-right: 100px;
+}
+
+
+.carousel1 .iiteem{
+  position: absolute;
+  top: calc(50% - 150px);
+  left: calc(50% - 100px);
+  width: 300px;
+  height: 400px;
+  background: lightgray;
+  transition: 0.5s;
+  box-shadow: 0 0 50px rgba(0,0,0,0.5);
+  transform-style: preserve-3d;
+  transform-origin: bottom;
+  user-select: none;
+  -webkit-box-reflect: below 1px linear-gradient(transparent,transparent,#0002);
+}
+
+.carousel1 .iiteem:nth-child(1){
+  transform: translate3d(-300px,0,0) scale(0.8) rotateY(25deg);
+  z-index: 1;
+}
+
+.carousel1 .iiteem:nth-child(2){
+  transform: translate3d(-300px,0,0) scale(0.8) rotateY(25deg);
+  z-index: 2;
+}
+
+.carousel1 .iiteem:nth-child(3){
+  transform: translate3d(-150px,0,0) scale(0.9) rotateY(15deg);
+  z-index: 3;
+}
+
+.carousel1 .iiteem:nth-child(4){
+  transform: translate3d(0px,0,0) scale(1) rotateY(0deg);
+  z-index: 4;
+}
+
+.carousel1 .iiteem:nth-child(5){
+  transform: translate3d(150px,0,0) scale(0.9) rotateY(-15deg);
+  z-index: 3;
+}
+
+.carousel1 .iiteem:nth-child(6){
+  transform: translate3d(300px,0,0) scale(0.8) rotateY(-25deg);
+  z-index: 2;
+}
+
+.carousel1 .iiteem:nth-child(7){
+  transform: translate3d(300px,0,0) scale(0.8) rotateY(-25deg);
+  z-index: -1;
+}
+
+.carousel1 .iiteem img{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.carousel1 .iiteem .texting{
+  position: relative;
+  
+  object-fit: fill;
+}
+
+.carouselbutton{
+  position: absolute;
+  bottom: 30px;
+  display: flex;
+  gap: 20px;
+}
+
+.carouselbutton span{
+  position: relative;
+  width: 50px;
+  height: 50px;
+  border: 3px solid #1a1919;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0.5;
+}
+
+.carouselbutton span:hover{
+  opacity: 1;
+}
+
+.carouselbutton span::before{
+  content: '';
+  position: absolute;
+  left: 20px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #1a1919;
+  border-left: 3px solid #1a1919;
+  rotate: -45deg;
+}
+
+.carouselbutton span:last-child::before{
+  content: '';
+  position: absolute;
+  left: initial;
+  right: 20px;
+  width: 10px;
+  height: 10px;
+  border-top: 3px solid #1a1919;
+  border-left: 3px solid #1a1919;
+  rotate: 135deg;
+}
+
+.texting{
+  background-color: #ffffffb0;
+  padding: 10px;
+  font-size: 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  position: absolute;
+  top: 20%;
+  left: 50px;
+  width: 230px;
+  opacity: 0;
+  transition: 1s all ease-in-out;
+}
+
+.iiteem:hover{
+  transform: scale(1.2);
+  opacity: 1;
+}
+
+.iiteem:hover .texting{
+  opacity: 1;
+}
+    </style>
+
     <body>
         <!-- Start Back To Top  -->
           <div class="fixed-bottom">
@@ -34,7 +196,7 @@
           <header>
              <!---Start Nav Bar-->
               <nav class="navbar navbar-expand-md fixed-top" style="height: 100px";>
-                <a href`="index.html" class="navbar-brand text-light mx-3">
+                <a href="index.html" class="navbar-brand text-light mx-3">
                    <img src="./assets/img/shinnobu/logo2-removebg-preview.png" width="100px" alt="favicon" style="border-radius: 50%; margin-bottom: 10px;"/>
                    <span class="text-uppercase h3 fw-bold mx-4" style="font-family: 'Times New Roman', Times, serif; font-size: 50px;">Flix<span class="h3" style="font-family: 'Times New Roman', Times, serif; font-size: 50px;"> Vibe</span></span>
                 </a>
@@ -47,14 +209,14 @@
 
                 <div id="nav" class="navbar-collapse collapse justify-content-end text-uppercase fw-bold">
                    <ul class="navbar-nav">
-                      <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="home">Home</a></li>
-                      <li class="nav-item"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists" data-filter="aboutus" >About Us</a></li>
+                      <li class="nav-item"><a href="./index.html" class="nav-link mx-2 menuitems menulists" data-filter="home">Home</a></li>
+                      <li class="nav-item"><a href="./project/aboutus.html" class="nav-link mx-2 menuitems menulists" data-filter="aboutus" >About Us</a></li>
                       <li class="nav-item dropdown"><a href="javascript:void(0);" class="nav-link mx-2 menuitems menulists dropdown-toggle" data-filter="movies" data-bs-toggle="dropdown">Gendres</a>
                           <ul class="dropdown-menu">
                               <li><a href="./project/action.html" class="dropdown-item" data-filter="action">Action</a></li>
                               <li><a href="./project/horror.html" class="dropdown-item" data-filter="horror">Horror</a></li>
-                              <li><a href="./project/" class="dropdown-item" data-filter="romantic">Romantic</a></li>
-                              <li><a href="./javascript:void(0);" class="dropdown-item" data-filter="drama">Drama</a></li>
+                              <li><a href="javascript:void(0);" class="dropdown-item" data-filter="romantic">Romantic</a></li>
+                              <li><a href="./project/drama.html" class="dropdown-item" data-filter="drama">Drama</a></li>
                               <li><a href="javascript:void(0);" class="dropdown-item" data-filter="funny">Comedy</a></li>
                               <li><a href="./project/animation.html" class="dropdown-item" data-filter="animation">Animation</a></li>
                           </ul>
@@ -79,235 +241,87 @@
              <!--End Nav Bar-->
             
              <!--Start Banner-->
-              <div class="text-light text-center text-md-end text-sm-center banners">
-                 <h1 class="display-4 bannerheaders auto">Welcome to <span class="display-3 text-uppercase auto" style="font-family: 'Times New Roman', Times, serif;">Flix Vibe</span> Movies Theater</h1>
-                 <p class="lead bannerparagraphs auto">Your pleasure is our pleasure, ENJOY your golden time.</p>
-              </div>
+             <div class="text-light text-center text-md-end text-sm-center banners">
+                <h1 class="display-4 bannerheaders auto">Welcome to <span class="display-3 text-uppercase auto" style="font-family: 'Times New Roman', Times, serif;">Flix Vibe</span> Movies Theater</h1>
+                <p class="lead bannerparagraphs auto">Your pleasure is our pleasure, ENJOY your golden time.</p>
+             </div>
             <!---End Banner--->
           </header>
         <!---End Header Section----->  
 
         <!--Start Movie Section -->
-         <div class="movie-list-container col-md-12">
-            <h1 class="title text-center text-md-end fw-bold filters trendings">Trendings</h1>
-            <br/>
-            <h2 class="movie-list-title fw-bold filters action">Movies</h2>
-            <div class="movie-list-wrapper">
-              <div class="movie-list">
-                 <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thomaswalker/action10.jpg" alt="movie10"/>
-                   <span class="movie-list-item-title">Deadpool</span>
-                   <p class="movie-list-item-desc">Running time - 2h 8m
-                      <br>Directed by - Shawn Levy Levy
-                          Starring - Ryan Reynolds, Hugh Jackman, Emma Corrin</br></p>
-                          <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/deadpool.html" target="_blank">Watch</a></button>  
-                   
-                   
-                 </div>
 
-                 <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/shinnobu/anni2.jpg" alt="anni2"/>
-                    <span class="movie-list-item-title">Transformers One</span>
-                    <p class="movie-list-item-desc">Running time - 1h 36m
-                    <br>Directed by -  Josh Cooley</br>
-                    <br>Distributed by - Paramount Pictures</br></p>
-                    <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/Transformersone.html" target="_blank">Watch</a></button>   
-                </div>
-
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/shinnobu/anni8.jpg" alt="anni8"/>
-                    <span class="movie-list-item-title">The Wild Robot</span>
-                    <p class="movie-list-item-desc">Running time - 1h 41m
-                    <br>Directed by - Chris Sanders</br>
-                    <br>Distributed by - Universal Pictures</br></p>
-                    <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/ThewildRobot.html" target="_blank">Watch</a></button>   
-                </div>
-   
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/tom/thenun2cv.jpg" alt="horror7"/>
-                    <span class="movie-list-item-title">The Nun II</span>
-                    <p class="movie-list-item-desc">Running time - 1h 50m
-                        <br>Directed by - Michael Chaves</br>
-                        <br>Starring - Taissa Farmiga, Jonas Bloquet, Storm Reid.</br></p>
-                        <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/thenun2023.mp4" target="_blank">Watch</a></button>
-                </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thomaswalker/action5.jpg" alt="movie5"/>
-                   <span class="movie-list-item-title">Vanguard</span>
-                   <p class="movie-list-item-desc">Running time - 1h 36m
-                       <br>Directed by - Stanley Tong
-                       Starrig - Jackie Chan
-                       Yang Yang,
-                       Ai Lun,
-                       Miya Muqi.</br></p>
-                       <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/vanguard.mp4" target="_blank">Watch</a></button>      
-               </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thomaswalker/action6.jpg" alt="movie6"/>
-                   <span class="movie-list-item-title">London Has Fallen</span>
-                   <p class="movie-list-item-desc">Running time - 1h 36m
-                       <br>Directed by - Babak Najafi
-                       Starring - Gerard Butler,
-                       Aaron Eckhart,
-                       Morgan Freeman.</br></p>
-                       <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/london.mp4" target="_blank">Watch</a></button>  
-               </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/thomaswalker/action7.jpg" alt="movie7"/>
-                   <span class="movie-list-item-title">BadLand Hunters</span>
-                   <p class="movie-list-item-desc">Running time - 1h 36m
-                       <br>Directed by - Heo Myung-haeng
-                       Starring - Ma Dong-seok,
-                       Lee Hee-joon,
-                       Lee Jun-young,
-                       Roh Jeong-eui.</br></p>
-                       <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/badland.mp4" target="_blank">Watch</a></button>  
-               </div>
-   
-               <div class="movie-list-item">
-                <img class="movie-list-item-img" src="./assets/img/thomaswalker/action8.jpg" alt="movie8"/>
-                <span class="movie-list-item-title">WAR </span>
-                <p class="movie-list-item-desc">Running time - 1h 36m
-                    <br>Directed by - Siddharth Anand.
-                    Starring - Hrithik Roshan,
-                    Tiger Shroff,
-                    Vaani Kapoor.</br></p>
-                    <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/war.mp4" target="_blank">Watch</a></button>  
+        <div class="subscribes">
+          <h1 class="title text-center text-md-end fw-bold filters trendings" style="font-size: 70px;">Trendings Movies and Series In This Year</h1>
+        </div>
+        <aside class="subscribes">
+          <div class="carousel1">
+            <div class="iiteem">
+              <img src="./assets/img/shinnobu/thelmacv.jpg">
+              <div class="texting">
+                <p class="para">Thelma<br> 2024 . Comedy/Action . 1hr 39min</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/Thelma.html" style="text-decoration: none;">Watch</a></button>
               </div>
+            </div>
+            <div class="iiteem">
+              <img src="./assets/img/thomaswalker/dpcv.jpg">
+              <div class="texting">
+                <p class="para">Dead Pool<br>2024 ‧ Action, Adventure, Comedy ‧ 2hr 8min</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/deadpool.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="./assets/img/Strawberry/dashingcv.jfif">
+              <div class="texting">
+                <p class="para">Dashing Youth<br>2024 . Adventure</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/dashingyouth.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="./assets/img/shinnobu/anni8.jpg">
+              <div class="texting">
+                <p class="para">The Wild Robot<br>2024 ‧ Animation/ Children's film, Adventure ‧ 1hr 41min</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/ThewildRobot.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="./assets/img/ella/judgecv.jpg">
+              <div class="texting">
+                <p class="para">The Judge From Hell<br> 2024 ‧ Legal Drama ‧ 1 season</p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/TheJudgefromHell.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+            <div class="iiteem">
+              <img src="./assets/img/paing/howtomake.jpg">
+              <div class="texting">
+                <p class="para">How to Make Millions Before Grandma Dies<br> 2024 ‧ Comedy/Drama ‧ 2hr 7min </p>
+                <button class="textbtn" style="background-color: #ffffff99; border-radius: 5px;"><a href="./project/howtomakemillion.html" style="text-decoration: none;">Watch</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="carouselbutton">
+            <span class="prev"></span>
+            <span class="next"></span>
+          </div>
+          <script>
+            let prev = document.querySelector('.prev');
+            let next = document.querySelector('.next');
 
-             </div>
-             <i class="fas fa-chevron-left leftarrow"></i>
-             <i class="fas fa-chevron-right rightarrow"></i>
-
-           </div>
-         </div>
+            next.addEventListener('click', function(){
+              let items = document.querySelectorAll('.iiteem');
+              document.querySelector('.carousel1').appendChild(items[0]);
+            })
+            prev.addEventListener('click', function(){
+              let items = document.querySelectorAll('.iiteem');
+              document.querySelector('.carousel1').appendChild(items[items.length - 1]);
+            })
+          </script>
+        </aside>
          
-         <div class="movie-list-container"><hr>
-            <h1 class="title text-center text-md-end fw-bold filters trendings">Trendings</h1>
-            <br/>
-            <h2 class="movie-list-title fw-bold filters animation">Series</h2>
-            <div class="movie-list-wrapper">
-              <div class="movie-list">
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/ella/romseries2.jpg" alt="movie3"/>
-                    <span class="movie-list-item-title">Love Next Door</span>
-                    <p class="movie-list-item-desc">Episode - 16
-                        <br>Directed by -  Yoo Je-won</br>
-                        <br>Starring - Jung Hae-in,
-                        Jung So-min.</br></p>
-                        <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/lovenextdoor.html" target="_blank">Watch</a></button>  
-                </div>
-
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/ella/romseries1.jpg" alt="romseries1"/>
-                    <span class="movie-list-item-title">No Gain No Love</span>
-                    <p class="movie-list-item-desc">Episode - 16
-                        <br>Directed by -  Kim Jeong-sik</br>
-                        <br>Starring - Shin Min-a,
-                        Kim Young-dae,
-                        Lee Sang-yi,
-                        Han Ji-hyun </br></p>
-                        <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/nogainnolove.mp4" target="_blank">Watch</a></button>    
-                </div>
-   
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/ella/romseries8.jpg" alt="romseries8"/>
-                    <span class="movie-list-item-title">Dear Hyeri</span>
-                    <p class="movie-list-item-desc">Episode - 16
-                        <br>Directed by - ung Ji-hyun, Heo Seok-won </br>
-                        <br>Starring -Shin Hye-sun,
-                        Lee Jin-wook,
-                        Kang Hoon,
-                        Jo Hye-joo.</br></p>
-                        <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/dearheyri.mp4" target="_blank">Watch</a></button>  
-                   </div>
-   
-                <div class="movie-list-item">
-                    <img class="movie-list-item-img" src="./assets/img/Strawberry/dashingcv.jfif" alt="anni4"/>
-                    <span class="movie-list-item-title">Dashing Youth</span>
-                    <p class="movie-list-item-desc">Episodes: 40
-                    <br>Starring : Neo Hou, He Yu, Hu Lian Xin</br>
-                    <br> Original Network: Youku</br></p>
-                    <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/myonigirl.mp4" target="_blank">Watch</a></button>   
-                </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/shinnobu/anni5.jpg" alt="anni5"/>
-                   <span class="movie-list-item-title">Elemental</span>
-                   <p class="movie-list-item-desc">Running time - 1h 49m
-                   <br>Directed by - Peter Sohn</br>
-                   <br>Distributed by - Walt Disney Studios Motion Pictures</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./project/elemental.html" target="_blank">Watch</a></button>       
-               </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/shinnobu/anni6.jpg" alt="anni6"/>
-                   <span class="movie-list-item-title">Wish</span>
-                   <p class="movie-list-item-desc">Running time - 1h 49m
-                   <br>Directed by - Fawn Veerasunthorn, Chris Buck</br>
-                   <br>Distributed by - Walt Disney Studios Motion Pictures</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/wish.mp4" target="_blank">Watch</a></button>     
-               </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/shinnobu/anni7.jpg" alt="anni7"/>
-                   <span class="movie-list-item-title">Ultraman: Rising</span>
-                   <p class="movie-list-item-desc">Running time - 1h 57m
-                   <br>Directed by - Shannon Tindle</br>
-                   <br>Distributed by - Netflix</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/ultraman: rising.mp4" target="_blank">Watch</a></button>    
-               </div>
-   
-               <div class="movie-list-item">
-                   <img class="movie-list-item-img" src="./assets/img/shinnobu/anni8.jpg" alt="anni8"/>
-                   <span class="movie-list-item-title">The Wild Robot</span>
-                   <p class="movie-list-item-desc">Running time - 1h 41m
-                   <br>Directed by - Chris Sanders</br>
-                   <br>Distributed by - Universal Pictures</br></p>
-                   <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/wildrobot.mp4" target="_blank">Watch</a></button>   
-               </div>
-
-               <div class="movie-list-item">
-                <img class="movie-list-item-img" src="./assets/img/shinnobu/anni9.jpg" alt="anni9"/>
-                <span class="movie-list-item-title">Despicable me 4</span>
-                <p class="movie-list-item-desc">Running time - 1h 34m
-                 <br>Directed by - Chris Renoud</br>
-                 <br>Distributed by - Universal Pictures</br></p>
-                 <button type="submit" class="movie-list-item-button"><a class ="a" href="./assets/img/videos/me4.mp4" target="_blank">Watch</a></button>   
-               </div>
-
-             </div>
-             <i class="fas fa-chevron-left leftarrow"></i>
-             <i class="fas fa-chevron-right rightarrow"></i>
-
-           </div>
-         </div><br>
         <!--End Movie Section -->
-
-        <!-- Start Card Section -->
-            <!-- <div class="container-fluid">
-                <div class="d-flex flex-wrap justify-content-center">
-                    <div class="filters"><a href="./assets/img/thwinchel/movie1.jpg"><img src="./assets/img/thwinchel/movie1.jpg" width="200" alt="movie1"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie2.jpg"><img src="./assets/img/thwinchel/movie2.jpg" width="200" alt="movie2"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie3.jpg"><img src="./assets/img/thwinchel/movie3.jpg" width="200" alt="movie3"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie4.jpg"><img src="./assets/img/thwinchel/movie4.jpg" width="200" alt="movie4"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie5.jpg"><img src="./assets/img/thwinchel/movie5.jpg" width="200" alt="movie5"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie6.jpg"><img src="./assets/img/thwinchel/movie6.jpg" width="200" alt="movie6"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie7.jpg"><img src="./assets/img/thwinchel/movie7.jpg" width="200" alt="movie7"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie8.jpg"><img src="./assets/img/thwinchel/movie8.jpg" width="200" alt="movie8"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie9.jpg"><img src="./assets/img/thwinchel/movie9.jpg" width="200" alt="movie9"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/movie10.jpg"><img src="./assets/img/thwinchel/movie10.jpg" width="200" alt="movie10"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/rommovie1.jpg"><img src="./assets/img/thwinchel/rommovie1.jpg" width="200" alt="rommovie1"/></a></div>
-                    <div class="filters"><a href="./assets/img/thwinchel/romseries1.jpg"><img src="./assets/img/thwinchel/romseries1.jpg" width="200" alt="romseries1"/></a></div>
-                </div>
-            </div> -->
-        <!-- End Card Section -->
         
         <!-- Start Subscribe Section -->
-        <section class="subscribes">
+        <section class="subscribes"><hr>
 
             <div class="container-fluid">
                 <div class="row">
